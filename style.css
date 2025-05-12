@@ -1,0 +1,16 @@
+
+.home {
+    background-image: url(https://siarchives.si.edu/sites/default/files/styles/body-image-450/public/blog-attached-images/87-7526.jpg?itok=y-mbNGWX);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: red;
+}
+.smile{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD5vHRTBq31Xjn0waedso1XFWvm_dGtJxCqg&s);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:rgb(0, 204, 255);
+}
+.bc {
+    background-color: black;
+}
