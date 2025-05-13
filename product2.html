@@ -16,6 +16,7 @@
           <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
           <li class="nav-item"><a class="nav-link" href="deals.html">Deals</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
         </ul>
       </div>
     </div>
@@ -27,12 +28,30 @@
       <div class="col">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGvDoSyeId-Y4CpztRRWAPwQkhjDwsXpWi9w&s" class="img-fluid my-4" alt="Broken Toaster" height="600px" width="600px" >
       </div>
-      <div class="col">
-        <p>This toaster burns everything just right — for the true artisan of breakfast!</p>
-        <p><strong>Price:</strong> $5 (slightly crispy)</p>
+      <div class="col align-self-center text-center">
+        <p>Stupid looking mirror that you'll look even worse in</p>
+        <p>(We Don't care what the picture says you only get one)</p>
+        <p><strong>Price:</strong> $100,000</p>
+        <button class="btn btn-success" onclick="addToCart('mirror', 100000)">Add to Cart</button>
       </div>
     </div>
   </div>
+  <script>
+    const cartKey = 'shoppingCart';
 
+    function addToCart(name, price) {
+      let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
+
+      const index = cart.findIndex(item => item.name === name);
+      if (index > -1) {
+        cart[index].quantity += 1;
+      } else {
+        cart.push({ name, price, quantity: 1 });
+      }
+
+      localStorage.setItem(cartKey, JSON.stringify(cart));
+      alert(`${name} added to cart!`);
+    }
+  </script>
 </body>
 </html>
